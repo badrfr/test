@@ -5,6 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Site en Construction</title>
     <link rel="stylesheet" href="https://badrfr.github.io/test/css/style.css">
+    <style>
+        body {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 12px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
     <h1>Site en Construction</h1>
@@ -18,14 +53,20 @@
 
     <!-- Formulaire de contact -->
     <form action="https://formspree.io/votre-email" method="POST">
-        <label for="name">Nom :</label>
-        <input type="text" id="name" name="name" required>
+        <div>
+            <label for="name">Nom :</label>
+            <input type="text" id="name" name="name" required>
+        </div>
 
-        <label for="email">Email :</label>
-        <input type="email" id="email" name="email" required>
+        <div>
+            <label for="email">Email :</label>
+            <input type="email" id="email" name="email" required>
+        </div>
 
-        <label for="message">Message :</label>
-        <textarea id="message" name="message" required></textarea>
+        <div>
+            <label for="message">Message :</label>
+            <textarea id="message" name="message" required></textarea>
+        </div>
 
         <button type="submit">Envoyer</button>
     </form>
