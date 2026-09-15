@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mon panier | Avenue 18K</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="container">
+    <span>✦ Garantie à vie sur tous nos bijoux</span>
+    <span>✦ Livraison offerte dès 150€</span>
+    <span>✦ Paiement en 3x sans frais</span>
+  </div>
+</div>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <button class="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+    <a href="index.html" class="logo">AVENUE 18K<small>Or 18 carats en ligne</small></a>
+    <nav class="main-nav">
+      <a href="boutique.html?cat=bagues">Bagues</a>
+      <a href="boutique.html?cat=colliers">Colliers</a>
+      <a href="boutique.html?cat=bracelets">Bracelets</a>
+      <a href="boutique.html?cat=boucles-oreilles">Boucles d'oreilles</a>
+      <a href="boutique.html">Toute la boutique</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="header-icons">
+      <a class="icon-btn" href="contact.html" title="Mon compte" aria-label="Mon compte">
+        <svg viewBox="0 0 24 24"><path d="M20 21a8 8 0 1 0-16 0"/><circle cx="12" cy="7" r="4"/></svg>
+      </a>
+      <a class="icon-btn" href="panier.html" title="Panier" aria-label="Panier">
+        <svg viewBox="0 0 24 24"><path d="M6 6h15l-1.5 9h-12z"/><path d="M6 6L4 3H2"/><circle cx="9" cy="20" r="1"/><circle cx="17" cy="20" r="1"/></svg>
+        <span class="cart-count">0</span>
+      </a>
+    </div>
+  </div>
+  <nav class="mobile-nav">
+    <a href="boutique.html?cat=bagues">Bagues</a>
+    <a href="boutique.html?cat=colliers">Colliers</a>
+    <a href="boutique.html?cat=bracelets">Bracelets</a>
+    <a href="boutique.html?cat=boucles-oreilles">Boucles d'oreilles</a>
+    <a href="boutique.html">Toute la boutique</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<div class="page-banner">
+  <div class="container">
+    <span class="eyebrow">Commande</span>
+    <h1>Mon panier</h1>
+  </div>
+</div>
+
+<section class="section" style="padding-top:40px">
+  <div class="container" id="cart-empty" style="display:none">
+    <div class="empty-state">
+      <p>Votre panier est vide pour le moment.</p>
+      <a href="boutique.html" class="btn btn-gold mt-40">Découvrir la boutique</a>
+    </div>
+  </div>
+
+  <div class="container cart-layout" id="cart-content">
+    <div>
+      <table class="cart-table">
+        <thead>
+          <tr>
+            <th>Produit</th>
+            <th>Prix</th>
+            <th>Quantité</th>
+            <th>Total</th>
+          </tr>
+        </thead>
+        <tbody id="cart-rows"></tbody>
+      </table>
+    </div>
+
+    <aside class="cart-summary">
+      <h3 style="margin-top:0">Récapitulatif</h3>
+      <div class="progress-track"><div class="progress-fill" id="progress-fill" style="width:0%"></div></div>
+      <p class="progress-note" id="progress-note"></p>
+      <div class="summary-row"><span>Sous-total</span><span id="summary-subtotal">0 €</span></div>
+      <div class="summary-row"><span>Livraison</span><span id="summary-shipping">0 €</span></div>
+      <div class="summary-row total"><span>Total</span><span id="summary-total">0 €</span></div>
+      <button class="btn btn-gold btn-block" id="checkout-btn" style="margin-top:20px">Passer la commande</button>
+      <p class="form-msg" id="checkout-msg"></p>
+    </aside>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <a href="index.html" class="logo">AVENUE 18K</a>
+      <p>Bijouterie en ligne spécialiste de l'or 18 carats. Des bijoux intemporels, une qualité certifiée, une garantie à vie.</p>
+    </div>
+    <div>
+      <h4>Boutique</h4>
+      <ul>
+        <li><a href="boutique.html?cat=bagues">Bagues</a></li>
+        <li><a href="boutique.html?cat=colliers">Colliers</a></li>
+        <li><a href="boutique.html?cat=bracelets">Bracelets</a></li>
+        <li><a href="boutique.html?cat=boucles-oreilles">Boucles d'oreilles</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Aide &amp; SAV</h4>
+      <ul>
+        <li><a href="contact.html">Nous contacter</a></li>
+        <li><a href="contact.html#faq">Livraison &amp; retours</a></li>
+        <li><a href="contact.html#faq">Guide des tailles</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Informations</h4>
+      <ul>
+        <li><a href="contact.html">Mentions légales</a></li>
+        <li><a href="contact.html">CGV</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <span>© 2026 Avenue 18K — Tous droits réservés</span>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script>
+  function renderCart() {
+    const cart = getCart();
+    const empty = document.getElementById("cart-empty");
+    const content = document.getElementById("cart-content");
+
+    if (!cart.length) {
+      empty.style.display = "block";
+      content.style.display = "none";
+      return;
+    }
+    empty.style.display = "none";
+    content.style.display = "grid";
+
+    const rowsEl = document.getElementById("cart-rows");
+    rowsEl.innerHTML = cart.map((line) => {
+      const p = getProduct(line.id);
+      if (!p) return "";
+      return `
+      <tr data-id="${p.id}">
+        <td>
+          <div class="cart-row-product">
+            <img data-src="${p.img}" alt="${p.name}">
+            <div>
+              <div class="cart-row-name">${p.name}</div>
+              <span class="product-meta">Or 18 carats · ${p.weight}</span><br>
+              <a href="#" class="cart-remove" data-remove="${p.id}">Retirer</a>
+            </div>
+          </div>
+        </td>
+        <td>${formatPrice(p.price)}</td>
+        <td>
+          <div class="qty-stepper">
+            <button type="button" data-minus="${p.id}">−</button>
+            <input type="number" min="1" value="${line.qty}" data-qty="${p.id}">
+            <button type="button" data-plus="${p.id}">+</button>
+          </div>
+        </td>
+        <td>${formatPrice(p.price * line.qty)}</td>
+      </tr>`;
+    }).join("");
+
+    rowsEl.querySelectorAll("img[data-src]").forEach((img) => {
+      withFallback(img, img.alt);
+      img.src = img.dataset.src;
+    });
+
+    rowsEl.querySelectorAll("[data-remove]").forEach((el) => {
+      el.addEventListener("click", (e) => {
+        e.preventDefault();
+        removeFromCart(el.dataset.remove);
+        renderCart();
+      });
+    });
+    rowsEl.querySelectorAll("[data-minus]").forEach((el) => {
+      el.addEventListener("click", () => {
+        const id = el.dataset.minus;
+        const line = getCart().find((l) => l.id === id);
+        if (line) updateCartQty(id, line.qty - 1);
+        renderCart();
+      });
+    });
+    rowsEl.querySelectorAll("[data-plus]").forEach((el) => {
+      el.addEventListener("click", () => {
+        const id = el.dataset.plus;
+        const line = getCart().find((l) => l.id === id);
+        if (line) updateCartQty(id, line.qty + 1);
+        renderCart();
+      });
+    });
+    rowsEl.querySelectorAll("[data-qty]").forEach((el) => {
+      el.addEventListener("change", () => {
+        const val = Math.max(1, parseInt(el.value || "1", 10));
+        updateCartQty(el.dataset.qty, val);
+        renderCart();
+      });
+    });
+
+    const subtotal = cartTotal();
+    const shipping = subtotal >= FREE_SHIPPING_THRESHOLD || subtotal === 0 ? 0 : 6.9;
+    const total = subtotal + shipping;
+
+    document.getElementById("summary-subtotal").textContent = formatPrice(subtotal);
+    document.getElementById("summary-shipping").textContent = shipping === 0 ? "Offerte" : formatPrice(shipping);
+    document.getElementById("summary-total").textContent = formatPrice(total);
+
+    const pct = Math.min(100, (subtotal / FREE_SHIPPING_THRESHOLD) * 100);
+    document.getElementById("progress-fill").style.width = pct + "%";
+    const note = document.getElementById("progress-note");
+    note.textContent = subtotal >= FREE_SHIPPING_THRESHOLD
+      ? "Bravo, votre livraison est offerte !"
+      : `Plus que ${formatPrice(FREE_SHIPPING_THRESHOLD - subtotal)} pour la livraison offerte.`;
+  }
+
+  document.getElementById("checkout-btn").addEventListener("click", () => {
+    const msg = document.getElementById("checkout-msg");
+    if (!getCart().length) return;
+    msg.textContent = "Ceci est une démonstration : le paiement sécurisé sera bientôt disponible.";
+  });
+
+  renderCart();
+</script>
+</body>
+</html>

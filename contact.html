@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact &amp; FAQ | Avenue 18K</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="container">
+    <span>✦ Garantie à vie sur tous nos bijoux</span>
+    <span>✦ Livraison offerte dès 150€</span>
+    <span>✦ Paiement en 3x sans frais</span>
+  </div>
+</div>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <button class="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+    <a href="index.html" class="logo">AVENUE 18K<small>Or 18 carats en ligne</small></a>
+    <nav class="main-nav">
+      <a href="boutique.html?cat=bagues">Bagues</a>
+      <a href="boutique.html?cat=colliers">Colliers</a>
+      <a href="boutique.html?cat=bracelets">Bracelets</a>
+      <a href="boutique.html?cat=boucles-oreilles">Boucles d'oreilles</a>
+      <a href="boutique.html">Toute la boutique</a>
+      <a href="contact.html" class="active">Contact</a>
+    </nav>
+    <div class="header-icons">
+      <a class="icon-btn" href="contact.html" title="Mon compte" aria-label="Mon compte">
+        <svg viewBox="0 0 24 24"><path d="M20 21a8 8 0 1 0-16 0"/><circle cx="12" cy="7" r="4"/></svg>
+      </a>
+      <a class="icon-btn" href="panier.html" title="Panier" aria-label="Panier">
+        <svg viewBox="0 0 24 24"><path d="M6 6h15l-1.5 9h-12z"/><path d="M6 6L4 3H2"/><circle cx="9" cy="20" r="1"/><circle cx="17" cy="20" r="1"/></svg>
+        <span class="cart-count">0</span>
+      </a>
+    </div>
+  </div>
+  <nav class="mobile-nav">
+    <a href="boutique.html?cat=bagues">Bagues</a>
+    <a href="boutique.html?cat=colliers">Colliers</a>
+    <a href="boutique.html?cat=bracelets">Bracelets</a>
+    <a href="boutique.html?cat=boucles-oreilles">Boucles d'oreilles</a>
+    <a href="boutique.html">Toute la boutique</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<div class="page-banner">
+  <div class="container">
+    <span class="eyebrow">Nous contacter</span>
+    <h1>Une question ? Nous sommes là</h1>
+  </div>
+</div>
+
+<section class="section">
+  <div class="container contact-layout">
+    <div>
+      <div class="contact-info-block">
+        <h3>Service client</h3>
+        <p>Du lundi au samedi, de 9h à 18h.<br>Téléphone : 01 23 45 67 89<br>Email : contact@avenue18k.fr</p>
+      </div>
+      <div class="contact-info-block">
+        <h3>Atelier &amp; showroom</h3>
+        <p>12 Avenue de l'Orfèvrerie, 75008 Paris<br>Sur rendez-vous uniquement</p>
+      </div>
+      <div class="contact-info-block">
+        <h3>Réseaux sociaux</h3>
+        <p>Suivez nos nouveautés et coulisses d'atelier sur Instagram et Pinterest.</p>
+      </div>
+    </div>
+
+    <form class="contact-form js-contact-form">
+      <div class="field">
+        <label for="c-name">Nom complet</label>
+        <input type="text" id="c-name" name="name" required>
+      </div>
+      <div class="field">
+        <label for="c-email">Email</label>
+        <input type="email" id="c-email" name="email" required>
+      </div>
+      <div class="field">
+        <label for="c-subject">Sujet</label>
+        <select id="c-subject" name="subject">
+          <option>Question sur une commande</option>
+          <option>Question sur un produit</option>
+          <option>Retour ou échange</option>
+          <option>Autre demande</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="c-message">Message</label>
+        <textarea id="c-message" name="message" required></textarea>
+      </div>
+      <button type="submit" class="btn btn-gold">Envoyer le message</button>
+      <p class="form-msg" style="color:var(--gold-dark)"></p>
+    </form>
+  </div>
+</section>
+
+<section class="section section-alt" id="faq">
+  <div class="container" style="max-width:820px">
+    <div class="section-head">
+      <span class="eyebrow">FAQ</span>
+      <h2>Questions fréquentes</h2>
+    </div>
+    <div class="accordion">
+      <div class="accordion-item">
+        <button class="accordion-trigger">Quels sont les délais de livraison ? <span class="plus">+</span></button>
+        <div class="accordion-panel"><p>Vos bijoux sont expédiés sous 24 à 48h et livrés en 3 à 5 jours ouvrés en France métropolitaine. La livraison est offerte dès 150€ d'achat.</p></div>
+      </div>
+      <div class="accordion-item">
+        <button class="accordion-trigger">Puis-je retourner un bijou ? <span class="plus">+</span></button>
+        <div class="accordion-panel"><p>Oui, vous disposez de 30 jours pour retourner un bijou non porté dans son emballage d'origine, pour un remboursement ou un échange.</p></div>
+      </div>
+      <div class="accordion-item">
+        <button class="accordion-trigger">Comment connaître ma taille de bague ? <span class="plus">+</span></button>
+        <div class="accordion-panel"><p>Mesurez le tour de votre doigt avec un fil, puis reportez la mesure sur notre guide des tailles disponible sur chaque fiche produit, ou faites-vous accompagner par notre service client.</p></div>
+      </div>
+      <div class="accordion-item">
+        <button class="accordion-trigger">Comment entretenir mes bijoux en or 18 carats ? <span class="plus">+</span></button>
+        <div class="accordion-panel"><p>Nettoyez-les à l'eau tiède savonneuse avec une brosse souple, rincez et séchez avec un chiffon doux. Évitez le contact avec le parfum, la piscine et les produits chimiques.</p></div>
+      </div>
+      <div class="accordion-item">
+        <button class="accordion-trigger">La garantie à vie couvre-t-elle quoi ? <span class="plus">+</span></button>
+        <div class="accordion-panel"><p>Elle couvre tout défaut de fabrication (fermoir, soudure, sertissage) ainsi qu'un service gratuit de nettoyage et d'ajustement pendant toute la durée de vie du bijou.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <a href="index.html" class="logo">AVENUE 18K</a>
+      <p>Bijouterie en ligne spécialiste de l'or 18 carats. Des bijoux intemporels, une qualité certifiée, une garantie à vie.</p>
+    </div>
+    <div>
+      <h4>Boutique</h4>
+      <ul>
+        <li><a href="boutique.html?cat=bagues">Bagues</a></li>
+        <li><a href="boutique.html?cat=colliers">Colliers</a></li>
+        <li><a href="boutique.html?cat=bracelets">Bracelets</a></li>
+        <li><a href="boutique.html?cat=boucles-oreilles">Boucles d'oreilles</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Aide &amp; SAV</h4>
+      <ul>
+        <li><a href="contact.html">Nous contacter</a></li>
+        <li><a href="contact.html#faq">Livraison &amp; retours</a></li>
+        <li><a href="contact.html#faq">Guide des tailles</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Informations</h4>
+      <ul>
+        <li><a href="contact.html">Mentions légales</a></li>
+        <li><a href="contact.html">CGV</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <span>© 2026 Avenue 18K — Tous droits réservés</span>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script>
+  document.querySelectorAll(".accordion-trigger").forEach((trigger) => {
+    trigger.addEventListener("click", () => {
+      trigger.parentElement.classList.toggle("open");
+      const panel = trigger.nextElementSibling;
+      panel.style.maxHeight = trigger.parentElement.classList.contains("open")
+        ? panel.scrollHeight + "px"
+        : 0;
+    });
+  });
+
+  document.querySelector(".js-contact-form").addEventListener("submit", (e) => {
+    e.preventDefault();
+    const msg = e.currentTarget.querySelector(".form-msg");
+    msg.textContent = "Merci, votre message a bien été envoyé ! Notre équipe vous répondra sous 24h.";
+    e.currentTarget.reset();
+  });
+</script>
+</body>
+</html>

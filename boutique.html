@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Boutique — Bijoux en or 18 carats | Avenue 18K</title>
+<meta name="description" content="Toute la collection Avenue 18K : bagues, colliers, bracelets, boucles d'oreilles et pendentifs en or 18 carats.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="container">
+    <span>✦ Garantie à vie sur tous nos bijoux</span>
+    <span>✦ Livraison offerte dès 150€</span>
+    <span>✦ Paiement en 3x sans frais</span>
+  </div>
+</div>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <button class="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+    <a href="index.html" class="logo">AVENUE 18K<small>Or 18 carats en ligne</small></a>
+    <nav class="main-nav">
+      <a href="boutique.html?cat=bagues">Bagues</a>
+      <a href="boutique.html?cat=colliers">Colliers</a>
+      <a href="boutique.html?cat=bracelets">Bracelets</a>
+      <a href="boutique.html?cat=boucles-oreilles">Boucles d'oreilles</a>
+      <a href="boutique.html" class="active">Toute la boutique</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="header-icons">
+      <a class="icon-btn" href="contact.html" title="Mon compte" aria-label="Mon compte">
+        <svg viewBox="0 0 24 24"><path d="M20 21a8 8 0 1 0-16 0"/><circle cx="12" cy="7" r="4"/></svg>
+      </a>
+      <a class="icon-btn" href="panier.html" title="Panier" aria-label="Panier">
+        <svg viewBox="0 0 24 24"><path d="M6 6h15l-1.5 9h-12z"/><path d="M6 6L4 3H2"/><circle cx="9" cy="20" r="1"/><circle cx="17" cy="20" r="1"/></svg>
+        <span class="cart-count">0</span>
+      </a>
+    </div>
+  </div>
+  <nav class="mobile-nav">
+    <a href="boutique.html?cat=bagues">Bagues</a>
+    <a href="boutique.html?cat=colliers">Colliers</a>
+    <a href="boutique.html?cat=bracelets">Bracelets</a>
+    <a href="boutique.html?cat=boucles-oreilles">Boucles d'oreilles</a>
+    <a href="boutique.html">Toute la boutique</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<div class="page-banner">
+  <div class="container">
+    <span class="eyebrow">Collection</span>
+    <h1 id="page-title">Toute la boutique</h1>
+  </div>
+</div>
+
+<div class="container breadcrumb">
+  <a href="index.html">Accueil</a> / <span id="breadcrumb-current">Boutique</span>
+</div>
+
+<section class="section" style="padding-top:0">
+  <div class="container shop-layout">
+    <aside class="filters">
+      <h4>Catégories</h4>
+      <label class="filter-option"><input type="radio" name="cat" value="" checked> Toutes les catégories</label>
+      <label class="filter-option"><input type="radio" name="cat" value="bagues"> Bagues</label>
+      <label class="filter-option"><input type="radio" name="cat" value="colliers"> Colliers</label>
+      <label class="filter-option"><input type="radio" name="cat" value="bracelets"> Bracelets</label>
+      <label class="filter-option"><input type="radio" name="cat" value="boucles-oreilles"> Boucles d'oreilles</label>
+      <label class="filter-option"><input type="radio" name="cat" value="pendentifs"> Pendentifs</label>
+
+      <h4>Prix</h4>
+      <label class="filter-option"><input type="radio" name="price" value="" checked> Tous les prix</label>
+      <label class="filter-option"><input type="radio" name="price" value="0-200"> Moins de 200€</label>
+      <label class="filter-option"><input type="radio" name="price" value="200-350"> 200€ – 350€</label>
+      <label class="filter-option"><input type="radio" name="price" value="350-9999"> Plus de 350€</label>
+
+      <h4>Mise en avant</h4>
+      <label class="filter-option"><input type="checkbox" name="promo" value="promo"> En promotion</label>
+      <label class="filter-option"><input type="checkbox" name="nouveau" value="nouveau"> Nouveautés</label>
+
+      <button class="btn btn-outline btn-block" id="reset-filters" type="button">Réinitialiser</button>
+    </aside>
+
+    <div>
+      <div class="shop-toolbar">
+        <span class="results-count" id="results-count"></span>
+        <select id="sort-select">
+          <option value="pertinence">Trier par pertinence</option>
+          <option value="asc">Prix croissant</option>
+          <option value="desc">Prix décroissant</option>
+        </select>
+      </div>
+      <div class="products-grid" id="shop-grid"></div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <a href="index.html" class="logo">AVENUE 18K</a>
+      <p>Bijouterie en ligne spécialiste de l'or 18 carats. Des bijoux intemporels, une qualité certifiée, une garantie à vie.</p>
+      <div class="footer-social">
+        <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
+        <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M15 8h2V5h-2a4 4 0 0 0-4 4v2H9v3h2v6h3v-6h2l1-3h-3V9a1 1 0 0 1 1-1z"/></svg></a>
+        <a href="#" aria-label="Pinterest"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9 17c1-3 2-6 2-8a2 2 0 0 1 4 0c0 1.5-1 3-2 3"/></svg></a>
+      </div>
+    </div>
+    <div>
+      <h4>Boutique</h4>
+      <ul>
+        <li><a href="boutique.html?cat=bagues">Bagues</a></li>
+        <li><a href="boutique.html?cat=colliers">Colliers</a></li>
+        <li><a href="boutique.html?cat=bracelets">Bracelets</a></li>
+        <li><a href="boutique.html?cat=boucles-oreilles">Boucles d'oreilles</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Aide &amp; SAV</h4>
+      <ul>
+        <li><a href="contact.html">Nous contacter</a></li>
+        <li><a href="contact.html#faq">Livraison &amp; retours</a></li>
+        <li><a href="contact.html#faq">Guide des tailles</a></li>
+        <li><a href="contact.html#faq">Entretien des bijoux</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Informations</h4>
+      <ul>
+        <li><a href="contact.html">Qui sommes-nous</a></li>
+        <li><a href="contact.html">Mentions légales</a></li>
+        <li><a href="contact.html">CGV</a></li>
+        <li><a href="contact.html">Confidentialité</a></li>
+      </ul>
+      <div class="payment-icons">
+        <span>CB</span><span>Visa</span><span>Mastercard</span><span>PayPal</span>
+      </div>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <span>© 2026 Avenue 18K — Tous droits réservés</span>
+    <span>Bijoux en or 18 carats certifiés, fabriqués avec exigence</span>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script>
+  const params = new URLSearchParams(location.search);
+  const initialCat = params.get("cat") || "";
+
+  const grid = document.getElementById("shop-grid");
+  const resultsCount = document.getElementById("results-count");
+  const pageTitle = document.getElementById("page-title");
+  const breadcrumbCurrent = document.getElementById("breadcrumb-current");
+  const sortSelect = document.getElementById("sort-select");
+
+  if (initialCat && CATEGORY_LABELS[initialCat]) {
+    const radio = document.querySelector(`input[name="cat"][value="${initialCat}"]`);
+    if (radio) radio.checked = true;
+    pageTitle.textContent = CATEGORY_LABELS[initialCat];
+    breadcrumbCurrent.textContent = CATEGORY_LABELS[initialCat];
+  }
+
+  function currentFilters() {
+    const cat = document.querySelector('input[name="cat"]:checked').value;
+    const priceRange = document.querySelector('input[name="price"]:checked').value;
+    const promoOnly = document.querySelector('input[name="promo"]').checked;
+    const nouveauOnly = document.querySelector('input[name="nouveau"]').checked;
+    return { cat, priceRange, promoOnly, nouveauOnly, sort: sortSelect.value };
+  }
+
+  function applyFilters() {
+    const { cat, priceRange, promoOnly, nouveauOnly, sort } = currentFilters();
+    let list = PRODUCTS.slice();
+
+    if (cat) list = list.filter((p) => p.cat === cat);
+    if (priceRange) {
+      const [min, max] = priceRange.split("-").map(Number);
+      list = list.filter((p) => p.price >= min && p.price <= max);
+    }
+    if (promoOnly) list = list.filter((p) => p.badge === "promo");
+    if (nouveauOnly) list = list.filter((p) => p.badge === "nouveau");
+
+    if (sort === "asc") list.sort((a, b) => a.price - b.price);
+    if (sort === "desc") list.sort((a, b) => b.price - a.price);
+
+    resultsCount.textContent = `${list.length} bijou${list.length > 1 ? "x" : ""}`;
+    renderProductGrid(grid, list);
+
+    if (!cat) {
+      pageTitle.textContent = "Toute la boutique";
+      breadcrumbCurrent.textContent = "Boutique";
+    } else {
+      pageTitle.textContent = CATEGORY_LABELS[cat];
+      breadcrumbCurrent.textContent = CATEGORY_LABELS[cat];
+    }
+  }
+
+  document.querySelectorAll('.filters input, #sort-select').forEach((el) => {
+    el.addEventListener("change", applyFilters);
+  });
+
+  document.getElementById("reset-filters").addEventListener("click", () => {
+    document.querySelector('input[name="cat"][value=""]').checked = true;
+    document.querySelector('input[name="price"][value=""]').checked = true;
+    document.querySelector('input[name="promo"]').checked = false;
+    document.querySelector('input[name="nouveau"]').checked = false;
+    sortSelect.value = "pertinence";
+    applyFilters();
+  });
+
+  applyFilters();
+</script>
+</body>
+</html>
