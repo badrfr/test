@@ -57,8 +57,11 @@
 
 <section class="section" style="padding-top:0" id="product-section">
   <div class="container product-detail">
-    <div class="product-gallery-main">
-      <img id="pd-image" src="" alt="">
+    <div class="product-gallery">
+      <div class="product-gallery-main">
+        <img id="pd-image" src="" alt="">
+      </div>
+      <div class="product-gallery-thumbs" id="pd-thumbs"></div>
     </div>
     <div class="product-detail-info">
       <span class="eyebrow" id="pd-cat"></span>
@@ -171,10 +174,25 @@
   breadcrumbCat.textContent = CATEGORY_LABELS[product.cat];
   breadcrumbCat.href = `boutique.html?cat=${product.cat}`;
 
-  const img = document.getElementById("pd-image");
-  withFallback(img, product.name);
-  img.src = product.img;
-  img.alt = product.name;
+  const mainImg = document.getElementById("pd-image");
+  const thumbsEl = document.getElementById("pd-thumbs");
+
+  function setMainImage(index) {
+    withFallback(mainImg, product.name);
+    mainImg.src = product.images[index];
+    mainImg.alt = product.name;
+    thumbsEl.querySelectorAll("img").forEach((t, i) => t.classList.toggle("active", i === index));
+  }
+
+  thumbsEl.innerHTML = product.images
+    .map((src, i) => `<img data-src="${src}" data-index="${i}" alt="${product.name} — vue ${i + 1}">`)
+    .join("");
+  thumbsEl.querySelectorAll("img").forEach((thumb) => {
+    withFallback(thumb, product.name);
+    thumb.src = thumb.dataset.src;
+    thumb.addEventListener("click", () => setMainImage(Number(thumb.dataset.index)));
+  });
+  setMainImage(0);
 
   const priceEl = document.getElementById("pd-price");
   priceEl.innerHTML = product.oldPrice

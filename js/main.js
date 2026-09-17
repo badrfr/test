@@ -5,62 +5,82 @@
 const CART_KEY = "avenue18k_cart";
 const FREE_SHIPPING_THRESHOLD = 150;
 
+/* ---------------- Images (plusieurs vues par produit) ---------------- */
+const IMG = {
+  bg1: "https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=900&q=80",
+  bg2: "https://images.unsplash.com/photo-1603561591411-07134e71a2a9?auto=format&fit=crop&w=900&q=80",
+  bg3: "https://images.unsplash.com/photo-1611652022419-a9419f74343d?auto=format&fit=crop&w=900&q=80",
+  bg4: "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?auto=format&fit=crop&w=900&q=80",
+  co1: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=900&q=80",
+  co2: "https://images.unsplash.com/photo-1620656798579-1984d9e87df7?auto=format&fit=crop&w=900&q=80",
+  co3: "https://images.unsplash.com/photo-1587467512961-120760940315?auto=format&fit=crop&w=900&q=80",
+  br1: "https://images.unsplash.com/photo-1611955167811-4711904bb9f8?auto=format&fit=crop&w=900&q=80",
+  br2: "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?auto=format&fit=crop&w=900&q=90",
+  br3: "https://images.unsplash.com/photo-1524592094714-0f0654e20314?auto=format&fit=crop&w=900&q=80",
+  bo1: "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=900&q=80",
+  bo2: "https://images.unsplash.com/photo-1601121141461-9d6647bca1ed?auto=format&fit=crop&w=900&q=80",
+  bo3: "https://images.unsplash.com/photo-1587836374828-4dbafa94cf0e?auto=format&fit=crop&w=900&q=80",
+  pe1: "https://images.unsplash.com/photo-1573408301185-9146fe634ad0?auto=format&fit=crop&w=900&q=80",
+  pe2: "https://images.unsplash.com/photo-1596944924616-7b38e7cfac36?auto=format&fit=crop&w=900&q=80",
+  pe3: "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=900&q=80",
+};
+
 /* ---------------- Catalogue produits ---------------- */
 const PRODUCTS = [
   { id: "bg-01", cat: "bagues", name: "Bague Solitaire Éclat", price: 390, oldPrice: null, badge: "bestseller",
-    weight: "2,1 g", img: "https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=900&q=80",
+    weight: "2,1 g", images: [IMG.bg1, IMG.bg2, IMG.bg3],
     desc: "Bague en or jaune 18 carats sertie d'un oxyde de zirconium taille brillant, un classique intemporel pour twister son quotidien." },
   { id: "bg-02", cat: "bagues", name: "Alliance Douceur", price: 250, oldPrice: 290, badge: "promo",
-    weight: "1,8 g", img: "https://images.unsplash.com/photo-1603561591411-07134e71a2a9?auto=format&fit=crop&w=900&q=80",
+    weight: "1,8 g", images: [IMG.bg2, IMG.bg3, IMG.bg4],
     desc: "Anneau fin et lumineux en or 18 carats, pensé pour être porté seul ou en accumulation avec vos bagues préférées." },
   { id: "bg-03", cat: "bagues", name: "Bague Trilogie", price: 490, oldPrice: null, badge: "nouveau",
-    weight: "2,6 g", img: "https://images.unsplash.com/photo-1611652022419-a9419f74343d?auto=format&fit=crop&w=900&q=80",
+    weight: "2,6 g", images: [IMG.bg3, IMG.bg4, IMG.bg1],
     desc: "Trois pierres serties griffes sur un anneau en or 18 carats, symbole du passé, du présent et de l'avenir." },
   { id: "bg-04", cat: "bagues", name: "Chevalière Initiale", price: 320, oldPrice: null, badge: "",
-    weight: "3,4 g", img: "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?auto=format&fit=crop&w=900&q=80",
+    weight: "3,4 g", images: [IMG.bg4, IMG.bg1, IMG.bg2],
     desc: "Chevalière personnalisable en or 18 carats, gravure d'initiale offerte pour une pièce unique." },
 
   { id: "co-01", cat: "colliers", name: "Collier Chaîne Maille Forçat", price: 340, oldPrice: null, badge: "bestseller",
-    weight: "4,2 g", img: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=900&q=80",
+    weight: "4,2 g", images: [IMG.co1, IMG.co2, IMG.co3],
     desc: "Chaîne maille forçat en or 18 carats, 42 cm ajustable, la base indispensable de tout bijoutier." },
   { id: "co-02", cat: "colliers", name: "Collier Pastille Gravée", price: 280, oldPrice: 320, badge: "promo",
-    weight: "3,1 g", img: "https://images.unsplash.com/photo-1620656798579-1984d9e87df7?auto=format&fit=crop&w=900&q=80",
+    weight: "3,1 g", images: [IMG.co2, IMG.co3, IMG.co1],
     desc: "Fine chaîne et médaille ronde en or 18 carats, personnalisable avec l'initiale de votre choix." },
   { id: "co-03", cat: "colliers", name: "Collier Coeur Filaire", price: 260, oldPrice: null, badge: "nouveau",
-    weight: "2,4 g", img: "https://images.unsplash.com/photo-1587467512961-120760940315?auto=format&fit=crop&w=900&q=80",
+    weight: "2,4 g", images: [IMG.co3, IMG.co1, IMG.co2],
     desc: "Pendentif coeur en fil d'or 18 carats sur chaîne vénitienne, tout en légèreté et en élégance." },
   { id: "co-04", cat: "colliers", name: "Collier Rivière Étoiles", price: 520, oldPrice: null, badge: "",
-    weight: "5,0 g", img: "https://images.unsplash.com/photo-1620656798579-1984d9e87df7?auto=format&fit=crop&w=900&q=90",
+    weight: "5,0 g", images: [IMG.co2, IMG.co1, IMG.co3],
     desc: "Multi-motifs étoiles sertis en or 18 carats, un collier qui capte la lumière sous tous les angles." },
 
   { id: "br-01", cat: "bracelets", name: "Bracelet Jonc Ouvert", price: 310, oldPrice: null, badge: "bestseller",
-    weight: "3,8 g", img: "https://images.unsplash.com/photo-1611955167811-4711904bb9f8?auto=format&fit=crop&w=900&q=80",
+    weight: "3,8 g", images: [IMG.br1, IMG.br2, IMG.br3],
     desc: "Jonc rigide ajustable en or 18 carats, un bracelet minimaliste et intemporel à porter en toute saison." },
   { id: "br-02", cat: "bracelets", name: "Bracelet Chaîne Gourmette", price: 275, oldPrice: 310, badge: "promo",
-    weight: "3,2 g", img: "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?auto=format&fit=crop&w=900&q=90",
+    weight: "3,2 g", images: [IMG.br2, IMG.br3, IMG.br1],
     desc: "Gourmette maille anglaise en or 18 carats, personnalisable par gravure sur la plaque centrale." },
   { id: "br-03", cat: "bracelets", name: "Bracelet Perles d'Or", price: 230, oldPrice: null, badge: "nouveau",
-    weight: "2,7 g", img: "https://images.unsplash.com/photo-1524592094714-0f0654e20314?auto=format&fit=crop&w=900&q=80",
+    weight: "2,7 g", images: [IMG.br3, IMG.br1, IMG.br2],
     desc: "Enfilade de perles d'or 18 carats sur fil élastique, à empiler avec vos autres bracelets." },
 
   { id: "bo-01", cat: "boucles-oreilles", name: "Puces Oreilles Diamantées", price: 190, oldPrice: null, badge: "bestseller",
-    weight: "1,1 g", img: "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=900&q=80",
+    weight: "1,1 g", images: [IMG.bo1, IMG.bo2, IMG.bo3],
     desc: "Puces d'oreilles en or 18 carats serties d'un oxyde de zirconium, pour un éclat discret au quotidien." },
   { id: "bo-02", cat: "boucles-oreilles", name: "Créoles Fines", price: 220, oldPrice: 260, badge: "promo",
-    weight: "1,6 g", img: "https://images.unsplash.com/photo-1601121141461-9d6647bca1ed?auto=format&fit=crop&w=900&q=80",
+    weight: "1,6 g", images: [IMG.bo2, IMG.bo3, IMG.bo1],
     desc: "Créoles fil fin en or 18 carats, diamètre 20 mm, un modèle intemporel qui traverse les tendances." },
   { id: "bo-03", cat: "boucles-oreilles", name: "Boucles Pendantes Étoile", price: 240, oldPrice: null, badge: "nouveau",
-    weight: "1,9 g", img: "https://images.unsplash.com/photo-1587836374828-4dbafa94cf0e?auto=format&fit=crop&w=900&q=80",
+    weight: "1,9 g", images: [IMG.bo3, IMG.bo1, IMG.bo2],
     desc: "Boucles pendantes motif étoile en or 18 carats, pour twister une tenue de soirée avec finesse." },
 
   { id: "pe-01", cat: "pendentifs", name: "Pendentif Médaille Soleil", price: 210, oldPrice: null, badge: "",
-    weight: "1,7 g", img: "https://images.unsplash.com/photo-1573408301185-9146fe634ad0?auto=format&fit=crop&w=900&q=80",
+    weight: "1,7 g", images: [IMG.pe1, IMG.pe2, IMG.pe3],
     desc: "Médaille soleil ciselée en or 18 carats, livrée avec chaîne assortie de 45 cm." },
   { id: "pe-02", cat: "pendentifs", name: "Pendentif Trèfle Porte-Bonheur", price: 195, oldPrice: 225, badge: "promo",
-    weight: "1,4 g", img: "https://images.unsplash.com/photo-1596944924616-7b38e7cfac36?auto=format&fit=crop&w=900&q=80",
+    weight: "1,4 g", images: [IMG.pe2, IMG.pe3, IMG.pe1],
     desc: "Petit trèfle porte-bonheur en or 18 carats, un bijou symbolique à offrir ou à s'offrir." },
   { id: "pe-03", cat: "pendentifs", name: "Pendentif Initiale Diamantée", price: 230, oldPrice: null, badge: "nouveau",
-    weight: "1,5 g", img: "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=900&q=80",
+    weight: "1,5 g", images: [IMG.pe3, IMG.pe1, IMG.pe2],
     desc: "Initiale sertie d'un oxyde de zirconium en or 18 carats, à personnaliser avec la lettre de votre choix." },
 ];
 
@@ -174,7 +194,7 @@ function productCardHTML(p) {
   <article class="product-card" data-id="${p.id}" data-cat="${p.cat}" data-price="${p.price}">
     <div class="product-thumb">
       ${badge}
-      <a href="produit.html?id=${p.id}"><img data-src="${p.img}" alt="${p.name}" loading="lazy"></a>
+      <a href="produit.html?id=${p.id}"><img data-src="${p.images[0]}" alt="${p.name}" loading="lazy"></a>
       <button class="quick-add" title="Ajouter au panier" data-add="${p.id}" aria-label="Ajouter au panier">
         <svg viewBox="0 0 24 24"><path d="M6 6h15l-1.5 9h-12z"/><path d="M6 6L4 3H2"/><circle cx="9" cy="20" r="1"/><circle cx="17" cy="20" r="1"/></svg>
       </button>
