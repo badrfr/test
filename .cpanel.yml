@@ -1,0 +1,13 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/pari3284/avenue18k.com/
+    - /bin/cp -R index.html $DEPLOYPATH
+    - /bin/cp -R boutique.html $DEPLOYPATH
+    - /bin/cp -R produit.html $DEPLOYPATH
+    - /bin/cp -R panier.html $DEPLOYPATH
+    - /bin/cp -R contact.html $DEPLOYPATH
+    - /bin/mkdir -p $DEPLOYPATH/css
+    - /bin/cp -R css/. $DEPLOYPATH/css/
+    - /bin/mkdir -p $DEPLOYPATH/js
+    - /bin/cp -R js/. $DEPLOYPATH/js/
